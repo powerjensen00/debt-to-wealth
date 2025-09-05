@@ -1,3 +1,54 @@
+/* global.css */
+@import "tailwindcss";
+/* --- EveryDollar brand tokens --- */
+:root {
+  --ed-primary: #10b981;      /* ED green (approx emerald-500/600) */
+  --ed-primary-600: #059669;  /* hover/active */
+  --ed-primary-50: #ecfdf5;   /* subtle bg tints */
+  --ed-ink: #0b1220;          /* near-black text */
+  --ed-muted: #6b7280;        /* secondary text */
+  --ed-border: rgba(2, 6, 23, 0.08); /* soft border */
+  --ed-bg: #f7faf9;           /* app background */
+  --ed-card: #ffffff;
+  --ed-danger: #ef4444;
+  --ed-amber: #f59e0b;
+}
+
+/* Optional: brandy font stack */
+:root { --ed-font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+html, body { font-family: var(--ed-font); color: var(--ed-ink); background: var(--ed-bg); }
+
+/* Tailwind v4 directive */
+@import "tailwindcss";
+
+/* Nice slider thumb + focus look */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  height: 18px; width: 18px; border-radius: 9999px; background: var(--ed-primary);
+  border: 2px solid white; box-shadow: 0 1px 2px rgba(0,0,0,.15); cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 18px; width: 18px; border-radius: 9999px; background: var(--ed-primary);
+  border: 2px solid white; box-shadow: 0 1px 2px rgba(0,0,0,.15); cursor: pointer;
+}
+/* Slider track styling */
+input[type="range"] {
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, var(--ed-primary) 0%, var(--ed-primary) var(--value, 50%), #e5e7eb var(--value, 50%), #e5e7eb 100%);
+  outline: none;
+  appearance: none;
+}
+/* Optional: nicer range thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px; width: 18px; border-radius: 9999px;
+  background: black; cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 18px; width: 18px; border-radius: 9999px; background: black; cursor: pointer;
+}
 body {
   font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
     'Arial', sans-serif;
