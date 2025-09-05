@@ -243,8 +243,14 @@ export default function DebtToWealthExperience() {
                   <div className="text-sm text-muted-foreground flex items-center gap-2"><Check className="w-4 h-4 text-green-600"/> {COPY.guarantee}</div>
                   <div className="flex gap-2">
                     <Button variant="secondary" onClick={() => setStep(4)}>Back</Button>
-                    <Button size="lg" disabled={!accept} onClick={() => window.location.href = "/subscribe?plan=annual80"}>
-                      Start for $80/yr <ArrowRight className="ml-2 w-4 h-4" />
+                    <Button
+                        size="lg"
+                        disabled={!accept}
+                        onClick={() => {
+                            window.location.href = process.env.NEXT_PUBLIC_CTA_URL;
+                        }}
+                    >
+                        Start for $80/yr <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </div>
                 </div>
